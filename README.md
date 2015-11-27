@@ -1,4 +1,5 @@
 # Json Line parser plugin for Embulk
+This plugin has rewritten of [shun0102 / embulk-parser-jsonl Plugin](https://github.com/shun0102/embulk-parser-jsonl) using Java.
 
 ## Overview
 
@@ -11,11 +12,14 @@
 - **schema**: specify column name and type (array, required)
 
 ## Example
+Input Data
 
 ```json:
 { "columnA": "Lorem ipsum", "columnB": 123456, "columnC": 123.45, "columnD": true,  "columnE": "2000-4-1 12:34:56" }
 { "columnA": "dolor sit amet", "columnB": 789, "columnC": 0.6789, "columnD": false, "columnE": "2015-4-1 00:00:00" }
 ```
+
+Config
 
 ```yaml:
 in:
@@ -29,7 +33,10 @@ in:
       - { name: columnC, type: double }
       - { name: columnD, type: boolean }
       - { name: columnE, type: timestamp, format: '%Y-%m-%d %H:%M:%S' }
+out:
+  type: stdout
 ```
+Embulk Preview
 
 ```bash:
 $ embulk preview sample.yml
