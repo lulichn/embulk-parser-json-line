@@ -58,7 +58,7 @@ Gem::Specification.new do |spec|
   spec.description   = %[Parses Embulk Parser Json Line files read by other file input plugins.]
   spec.email         = ["daisuke.develop@gmail.com"]
   spec.licenses      = ["MIT"]
-  # TODO set this: spec.homepage      = "https://github.com/lulichn/embulk-parser-json-line"
+  spec.homepage      = "https://github.com/lulichn/embulk-parser-json-line"
 
   spec.files         = `git ls-files`.split("\n") + Dir["classpath/*.jar"]
   spec.test_files    = spec.files.grep(%r"^(test|spec)/")
